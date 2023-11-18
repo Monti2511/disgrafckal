@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-button {
+    position: fixed;
+    z-index: 99;
+    top: 30px;
+    right: 55px;
+}
+
+.cgAdd {
+    height: 32px;
+    width: 32px;
+}
+
+.nav-slider {
+    position: fixed;
+    background-color: #f6f5f3;
+    top: 0px;
+    height: 100vh;
+    width: 50vw;
+    text-align: center;
+    padding-top: 20vh;
+}
+
+.nav-item {
+    font-size: 2.63636rem;
+    font-weight: 600;
+    color: #9faeb0;
+}
+
+.nav-item:hover {
+    color: #000;
+}
