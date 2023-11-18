@@ -23,7 +23,6 @@ export default function Index({ allPosts }: Props) {
           <title>{`Next.js Blog Example with ${CMS_NAME}`}</title>
         </Head>
         <Container>
-          <div>{isSlided ? "salu2" : ""} </div>
           <Intro />
           {heroPost && (
             <HeroPost
