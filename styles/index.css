@@ -24,12 +24,12 @@
     padding-top: 20vh;
 }
 
-.nav-item {
+.nav-link {
     font-size: 2.63636rem;
     font-weight: 600;
     color: #9faeb0;
 }
 
-.nav-item:hover {
+.nav-link:hover {
     color: #000;
 }

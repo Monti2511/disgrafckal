@@ -21,7 +21,7 @@ const Nav = () => {
             <nav style={{ right: position, transition: transition }} className="nav-slider">
                 <ul>
                     {navItems.map(navItem => (
-                        <li className="nav-item"><a href="#" style={{transition: transition}}>{navItem}</a></li>
+                        <li><a className="nav-link" href="#" style={{transition: transition}}>{navItem}</a></li>
                     ))}
                 </ul>
             </nav>
