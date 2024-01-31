@@ -1,12 +1,10 @@
 import { CgAdd } from "react-icons/cg";
-import React, { useState } from 'react';
-const Nav = () => {
-    const [isRotated, setIsRotated] = useState(false);
-    const [isSlided, setIsSlided] = useState(false);
+function Nav({isRotated, setIsRotated, isSlided, setIsSlided}) {
+    
     const navItems = ["Lo De La GameBoy", "El Urbanismo", "lo que me salga de los huevos"];
-    const transition = "all 0.3s linear";
+    const transition = "all 0.7s cubic-bezier(.23,1,.32,1)";
 
-    const handleRotate = () => {
+    const handleMenu = () => {
         setIsRotated(!isRotated);
         setIsSlided(!isSlided);
     }
@@ -16,7 +14,7 @@ const Nav = () => {
 
     return (
         <header>
-            <button style={{ transform: rotate, transition: transition }} onClick={handleRotate} className="nav-button"><CgAdd className="cgAdd" /></button>
+            <button style={{ transform: rotate, transition: transition }} onClick={handleMenu} className="nav-button"><CgAdd className="cgAdd" /></button>
 
             <nav style={{ right: position, transition: transition }} className="nav-slider">
                 <ul>
