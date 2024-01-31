@@ -2,34 +2,117 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: #f0f0ef;
+  --bg-color-secondary: #f6f5f3;
+  --color-text: #2c373a;
+  --duration: 2s;
+  --ease: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --bg-color-secondary: #181818;
+  --color-text: #cccccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--color-text);
+  background-color: var(--bg-color);
+  transition: background calc(var(--duration) / 4) var(--ease);
+}
+
+/* Nav */
+
 .nav-button {
-    position: fixed;
-    z-index: 99;
-    top: 30px;
-    right: 55px;
+  position: fixed;
+  z-index: 99;
+  top: 30px;
+  right: 55px;
+  transition: var(--ease);
 }
 
 .cgAdd {
-    height: 32px;
-    width: 32px;
+  height: 32px;
+  width: 32px;
 }
 
 .nav-slider {
-    position: fixed;
-    background-color: #f6f5f3;
-    top: 0px;
-    height: 100vh;
-    width: 50vw;
-    text-align: center;
-    padding-top: 20vh;
+  position: fixed;
+  background-color: var(--bg-color-secondary);
+  top: 0px;
+  height: 100vh;
+  width: 50vw;
+  text-align: center;
+  padding-top: 20vh;
+  transition: var(--ease);
 }
 
 .nav-link {
-    font-size: 2.63636rem;
-    font-weight: 600;
-    color: #9faeb0;
+  font-size: 2.63636rem;
+  font-weight: 600;
+  transition: var(--ease);
 }
 
 .nav-link:hover {
-    color: #000;
+  color: #000;
+}
+
+/* Mode */
+
+.mode-button {
+  position: fixed;
+  z-index: 99;
+  top: 30px;
+  left: 55px;
+  transition: var(--ease);
+}
+
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--color-text);
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: '';
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }

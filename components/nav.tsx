@@ -1,12 +1,15 @@
 import { CgAdd } from "react-icons/cg";
-function Nav({isRotated, setIsRotated, isSlided, setIsSlided}) {
-    
+function Nav({ isRotated, setIsRotated, isSlided, setIsSlided }) {
+
     const navItems = ["Lo De La GameBoy", "El Urbanismo", "lo que me salga de los huevos"];
-    const transition = "all 0.7s cubic-bezier(.23,1,.32,1)";
 
     const handleMenu = () => {
         setIsRotated(!isRotated);
         setIsSlided(!isSlided);
+    }
+
+    const handleMode = () => {
+        document.body.classList.toggle("dark-mode");
     }
 
     const rotate = isRotated ? "rotate(225deg)" : "rotate(0)";
@@ -14,12 +17,18 @@ function Nav({isRotated, setIsRotated, isSlided, setIsSlided}) {
 
     return (
         <header>
-            <button style={{ transform: rotate, transition: transition }} onClick={handleMenu} className="nav-button"><CgAdd className="cgAdd" /></button>
+            <div className="mode-button">
+                <label className="switch" htmlFor="checkbox">
+                    <input type="checkbox" id="checkbox" onClick={handleMode} />
+                    <div className="slider "></div>
+                </label>
+            </div>
+            <button style={{ transform: rotate }} onClick={handleMenu} className="nav-button"><CgAdd className="cgAdd" /></button>
 
-            <nav style={{ right: position, transition: transition }} className="nav-slider">
+            <nav style={{ right: position }} className="nav-slider">
                 <ul>
                     {navItems.map(navItem => (
-                        <li><a className="nav-link" href="#" style={{transition: transition}}>{navItem}</a></li>
+                        <li><a className="nav-link" href="#">{navItem}</a></li>
                     ))}
                 </ul>
             </nav>
